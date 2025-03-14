@@ -43,10 +43,12 @@ fi
 
 if [ "$KSU" = true ] ; then
   sed -i 's/name=box4magisk/name=box4KernelSU/g' $MODPATH/module.prop
+  unzip -o "$ZIPFILE" 'webroot/*' -d "$MODPATH" >&2
 fi
 
 if [ "$APATCH" = true ] ; then
   sed -i 's/name=box4magisk/name=box4APatch/g' $MODPATH/module.prop
+  unzip -o "$ZIPFILE" 'webroot/*' -d "$MODPATH" >&2
 fi
 
 mkdir -p /data/adb/box/bin/
